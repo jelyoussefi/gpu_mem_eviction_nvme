@@ -24,14 +24,14 @@ fetch:
 
 build: fetch
 	@$(call msg, Building the i915 driver  ...)
-	make -C ${KERNEL_DIR} i915dkmsdeb-pkg 
+	@make -C ${KERNEL_DIR} i915dkmsdeb-pkg 
 	
 
 install: build
 	@$(call msg, Installing the i915 driver   ...)
-	 sudo dpkg -i ${CURRENT_DIR}/intel-i915-dkms_*_all.deb &&
-	 sudo rmmod i915 && \
-	 sudo modprobe i915
+	@sudo dpkg -i ${CURRENT_DIR}/intel-i915-dkms_*_all.deb || echo 	
+	@sudo rmmod  i915 > /dev/null 2>@1 || echo
+	@sudo modprobe i915
 
 clean:
 	@$(call msg, Cleaning   ...)
