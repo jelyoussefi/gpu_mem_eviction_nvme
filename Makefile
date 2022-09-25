@@ -11,7 +11,7 @@ export TERM=xterm
 # Targets
 #----------------------------------------------------------------------------------------------------------------------
 default: build 
-.PHONY:  
+.PHONY:  test
 
 
 build: 
@@ -27,6 +27,7 @@ install: build
 
 test:
 	@$(call msg, Running gpu memory eviction test   ...)
+	@make -C ${CURRENT_DIR}/test
 	
 clean:
 	@$(call msg, Cleaning   ...)

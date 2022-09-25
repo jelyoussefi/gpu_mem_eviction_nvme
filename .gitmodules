@@ -7,3 +7,4 @@
 	path = test
 	url = https://github.com/jelyoussefi/memory_eviction_testing
 	branch = main
+	update = merge
