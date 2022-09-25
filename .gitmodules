@@ -3,3 +3,7 @@
 	url = https://github.com/jelyoussefi/intel-gpu-i915-backports
 	branch = ubuntu/main
 
+[submodule "test"]
+	path = test
+	url = https://github.com/jelyoussefi/memory_eviction_testing
+	branch = main
