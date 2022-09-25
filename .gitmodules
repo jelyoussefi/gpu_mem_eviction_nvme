@@ -1,0 +1,7 @@
+[submodule "test"]
+	path = test
+	url = https://github.com/jelyoussefi/memory_eviction_testing
+[submodule "intel-gpu-i915-backports"]
+	path = intel-gpu-i915-backports
+	url = https://github.com/jelyoussefi/intel-gpu-i915-backports
+	branch = ubuntu/main
