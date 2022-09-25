@@ -13,16 +13,8 @@ export TERM=xterm
 default: build 
 .PHONY:  
 
-fetch:
-	@if [ ! -f "${KERNEL_DIR}/.fetched" ]; then \
-		$(call msg, Cloning the kernel  ...) && \
-		rm -rf ${KERNEL_DIR} && \
-		git clone https://github.com/jelyoussefi/intel-gpu-i915-backports  ${KERNEL_DIR}  && \
-		cd ${KERNEL_DIR} && git checkout ubuntu/main && \
-		touch .fetched; \
-	fi
 
-build: fetch
+build: 
 	@$(call msg, Building the i915 driver  ...)
 	@make -C ${KERNEL_DIR} i915dkmsdeb-pkg 
 	
@@ -33,6 +25,9 @@ install: build
 	@sudo rmmod  i915 > /dev/null 2>@1 || echo
 	@sudo modprobe i915
 
+test:
+	@$(call msg, Running gpu memory eviction test   ...)
+	
 clean:
 	@$(call msg, Cleaning   ...)
 	@rm -rf intel-i915-dkms*
