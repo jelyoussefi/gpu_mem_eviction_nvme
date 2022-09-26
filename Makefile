@@ -4,7 +4,7 @@
 SHELL:=/bin/bash
 CURRENT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 KERNEL_DIR = ${CURRENT_DIR}/intel-gpu-i915-backports
-export TERM=xterm
+
 
 BASE_KERNEL_NAME=5.14.0-1051
 
