@@ -6,6 +6,8 @@ CURRENT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 KERNEL_DIR = ${CURRENT_DIR}/intel-gpu-i915-backports
 export TERM=xterm
 
+BASE_KERNEL_NAME=5.14.0-1051
+
 
 #----------------------------------------------------------------------------------------------------------------------
 # Targets
@@ -13,7 +15,14 @@ export TERM=xterm
 default: build 
 .PHONY:  test
 
+install_prerequisite:
+	@$(call msg, Installing Prerequisite  ...)
+	@sudo apt install -y dkms make debhelper devscripts build-essential flex bison gawk	
 
+install_kernel_sources:
+	@$(call msg, Installing the Kernel source  ...)
+	sudo apt install -y linux-headers-${BASE_KERNEL_NAME}-oem linux-image-unsigned-${BASE_KERNEL_NAME}-oem
+	
 build: 
 	@$(call msg, Building the i915 driver  ...)
 	@make -C ${KERNEL_DIR} i915dkmsdeb-pkg 
