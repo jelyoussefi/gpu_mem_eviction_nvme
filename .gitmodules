@@ -10,6 +10,5 @@
 	update = merge
 
 [submodule "gpu_system_memory_monitoring"]
-	path = gpu_system_memory_monitoring 
+	path = gpu_system_memory_monitoring
 	url = https://github.com/jelyoussefi/gpu_system_memory_monitoring
-	branch = main
