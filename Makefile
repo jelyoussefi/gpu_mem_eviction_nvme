@@ -39,8 +39,8 @@ test:
 	@make -C ${CURRENT_DIR}/test
 
 monitor:
-        @$(call msg, Monitoring the system and gpu memories   ...)
-        @make -C ${CURRENT_DIR}/gpu_system_memory_monitoring
+	@$(call msg, Monitoring the system and gpu memories   ...)
+	@make -C ${CURRENT_DIR}/gpu_system_memory_monitoring
 
 
 	
