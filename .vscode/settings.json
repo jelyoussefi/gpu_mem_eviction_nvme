@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "iosys-map.h": "c",
+        "i915_gemfs.h": "c"
+    }
+}
