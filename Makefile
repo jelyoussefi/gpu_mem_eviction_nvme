@@ -31,8 +31,8 @@ build:
 install: build
 	@$(call msg, Installing the i915 driver   ...)
 	@sudo dpkg -i ${CURRENT_DIR}/intel-i915-dkms_*_all.deb || echo 	
-	@sudo rmmod  i915 > /dev/null 2>@1 || echo
-	@sudo modprobe i915
+	@sudo rmmod  i915 || echo
+	@sudo modprobe i915 enable_eviction=3 nvme_partition_path=/data/nvme_swap/
 
 test:
 	@$(call msg, Running gpu memory eviction test   ...)
