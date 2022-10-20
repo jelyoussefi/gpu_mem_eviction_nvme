@@ -7,8 +7,8 @@
 	path = test
 	url = https://github.com/jelyoussefi/memory_eviction_testing
 	branch = main
-	update = merge
 
 [submodule "gpu_system_memory_monitoring"]
 	path = gpu_system_memory_monitoring
 	url = https://github.com/jelyoussefi/gpu_system_memory_monitoring
+	branch = main
