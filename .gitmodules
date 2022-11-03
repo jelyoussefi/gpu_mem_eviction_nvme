@@ -1,7 +1,7 @@
 [submodule "intel-gpu-i915-backports"]
 	path = intel-gpu-i915-backports
 	url = https://github.com/jelyoussefi/intel-gpu-i915-backports
-	branch = ubuntu/main
+	branch = suse/main
 
 [submodule "test"]
 	path = test
